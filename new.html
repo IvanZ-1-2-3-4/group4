@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.w3-sidebar a {font-family: "Roboto", sans-serif}
+body,h1,h2,h3,h4,h5,h6,.w3-wide {font-family: "Montserrat", sans-serif;}
+</style>
+<body class="w3-content" style="max-width:1200px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-collapse w3-top" style="z-index:3;width:250px" id="mySidebar">
+  <div class="w3-container w3-display-container w3-padding-16">
+    <i onclick="w3_close()" class="fa fa-remove w3-hide-large w3-button w3-display-topright"></i>
+    <!--<h3 class="w3-wide"><b>MENU</b></h3>
+  <img src="logo.png" style="max-width: 200px;">--></br>&nbsp
+  </div>
+  <div class="w3-padding-64 w3-large w3-text-grey" style="font-weight:bold">
+    <a href="#" class="w3-bar-item w3-button">Home</a>
+    <a href="#" class="w3-bar-item w3-button">Why should you vaccinate?</a>
+    <a onclick="myAccFunc()" href="javascript:void(0)" class="w3-button w3-block w3-white w3-left-align" id="myBtn">
+      Misconceptions <i class="fa fa-caret-down"></i>
+    </a>
+    <div id="demoAcc" class="w3-bar-block w3-hide w3-padding-large w3-medium">
+      <a href="#" class="w3-bar-item w3-button w3-light-grey"><i class="fa fa-caret-right w3-margin-right"></i>Autism</a>
+      <a href="#" class="w3-bar-item w3-button">Immune system</a>
+      <a href="#" class="w3-bar-item w3-button">Toxic substances</a>
+      <a href="#" class="w3-bar-item w3-button">Natural immunity vs vaccination</a>
+      <a href="#" class="w3-bar-item w3-button">MMR vaccines</a>
+    </div>
+    <a href="#" class="w3-bar-item w3-button">Contact info</a>
+    <a href="#" class="w3-bar-item w3-button">Sources</a>
+    <a href="#" class="w3-bar-item w3-button">Blazers</a>
+    <a href="#" class="w3-bar-item w3-button">Shoes</a>
+  </div>
+  <a href="#footer" class="w3-bar-item w3-button w3-padding">Contact</a> 
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding" onclick="document.getElementById('newsletter').style.display='block'">Newsletter</a> 
+  <a href="#footer"  class="w3-bar-item w3-button w3-padding">Subscribe</a>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-bar w3-top w3-hide-large w3-black w3-xlarge">
+  <div class="w3-bar-item w3-padding-24 w3-wide">LOGO</div>
+  <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-24 w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></a>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- Content -->
+<div style="padding-left: 300px;">
+  <div style="" class="w3-container w3-xlarge">
+    <p style="font-size: 48px; margin-top: 24px; margin-bottom: 5px;" class="w3-left"><b>
+      Introduction
+    </b></p>
+    <p class="w3-right">
+      <i class="fa fa-search"></i>
+    </p>
+  </div>
+  <p>
+      Autism Spectrum Disorder (ASD) is a developmental disorder caused by differences in how the brain functions. This results in different ways of communication, social interaction, learning. Currently, there is a concern amongst parents that giving vaccines of measles, mumps and rubella vaccines could cause autism. Another reason for this concern is the fact that cases of autism increased over the past 20 years. If the theory that this increase in autism would be caused by the MMR vaccine, then the amounts of this vaccine given would have increased too, if this were the cause.
+  </p></br>
+  <div class="w3-container w3-xlarge">
+      <p style="font-size: 48px; margin-top: 24px; margin-bottom: 5px;" class="w3-left"><b>
+        What's up with Wakefield's study?
+      </b></p>
+    </div>
+    <p>
+        The first study that suggests this is a study done in 1998, Andrew Wakefield and colleagues published a paper in the journal Lancet. Wakefield's hypothesis (what he expected to obtain from the experiment) was that the measles, mumps and rubella (MMR) vaccine would cause intestinal inflammation which would then give out a mysterious type of protein that would enter the brain and cause autism. In support of his hypothesis, Dr. Wakefield described 12 children with developmental delay — eight had autism. The parents of these children thought that the autism was the fault of the MMR vaccine these children had received. All of these children had intestinal complaints and developed autism within one month of receiving MMR. The effect of Wakefield’s study was an outbreak of measles in the United Kingdom.
+    
+    </p>
+    <p>However, this study has been declared to be incorrect and is flawed for two reasons:  </p>
+    <ol>
+      <li>
+          Eight of children that said to have developed autism as a result of the injection, already had autism before getting the vaccine and before getting the gut symptoms. Therefore, this goes against this theory which stated that the intestinal inflammation would cause a protein causing autism, not the other way around.
+    
+      </li>
+      <li>
+          The mystery protein that would cause autism that was sent from the intestinal inflammation to the brain was never identified by any other piece of research.
+      </li>
+    </ol>
+    <p>
+        Wakefield’s study was repeated by other scientists and several major studies were conducted looking further into Wakefield’s results, and none of them found a link between autism and vaccines. Recent research has shown that autism develops in the uterus, way before the child receives any vaccines.
+    
+    </p>
+</div>
+
+<!-- Newsletter Modal -->
+<div id="newsletter" class="w3-modal">
+  <div class="w3-modal-content w3-animate-zoom" style="padding:32px">
+    <div class="w3-container w3-white w3-center">
+      <i onclick="document.getElementById('newsletter').style.display='none'" class="fa fa-remove w3-right w3-button w3-transparent w3-xxlarge"></i>
+      <h2 class="w3-wide">NEWSLETTER</h2>
+      <p>Join our mailing list to receive updates on new arrivals and special offers.</p>
+      <p><input class="w3-input w3-border" type="text" placeholder="Enter e-mail"></p>
+      <button type="button" class="w3-button w3-padding-large w3-red w3-margin-bottom" onclick="document.getElementById('newsletter').style.display='none'">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Accordion 
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// Click on the "Jeans" link on page load to open the accordion for demo purposes
+document.getElementById("myBtn").click();
+
+
+// Open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

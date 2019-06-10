@@ -1,0 +1,53 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%; 
+}
+
+.grid-container div {
+    border: 1px solid;
+    padding: 10px;
+}
+
+img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.game-container {
+    display: grid;
+    grid-template-columns: 3vw 3vw 3vw 3vw 3vw 3vw 3vw 3vw 3vw 3vw;
+    grid-template-rows: 3vw 3vw 3vw 3vw 3vw 3vw 3vw 3vw 3vw 3vw;
+}
+
+.game-container div {
+    border: 1px solid;
+}
+
+body {
+    /*text-align: center;
+    background-image: url(background.png);*/
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.paragraph {
+    width: 70%;
+}
+
+p {
+    text-align: center;
+}
+
+#misconceptions span {
+    border: 1px solid;
+    margin: 2px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#misconceptions div {
+    display: none;
+    background-color: white;
+}
