@@ -1,9 +1,16 @@
 $(document).ready(function() {
-    let cont = 0.3;
-    let i = 0;
+    let health = 0.9;
+    let spread = 0.2;
+    let spreadPercentageCoeff = 0.1 * 0.001;
+    let spreadPercentageSickCoeff = 0.1 * 0.001;
     let percentage;
+    let percentageSick;
     let ran;
     let cell;
+    let thresh;
+
+    let i;
+    let j;
 
     let slider = document.getElementById("range");
     slider.oninput = function() {
@@ -13,6 +20,7 @@ $(document).ready(function() {
     $("#begin").click(function() {
         percentage = parseInt(slider.value);
         clearInterval();
+        clearGrid();
         for (i = 1; i <= percentage; i++) {
             ran = getRandomInt();
             cell = document.getElementById(ran);
@@ -23,13 +31,36 @@ $(document).ready(function() {
             cell.style.backgroundColor = "green";
         }
 
+        // For each generation
         let cycle = setInterval(function() {
             for (i = 1; i <= 100; i++) {
+
+                // Determine number of sick
+                percentageSick = 0;
+                for (j = 1; j <= 100; j++) {
+                    cell = document.getElementById(j);
+                    if (cell.style.backgroundColor == "red") {percentageSick++;}
+                }
+
                 cell = document.getElementById(i);
-                if (cell.style.backgroundColor == "white") {
+
+                // Get people sick
+                ran = Math.random();
+                if (percentageSick == 0) {x}
+
+                console.log(thresh);
+                if ((cell.style.backgroundColor == "white") && (ran < thresh)) {
+                    console.log("s");
+                    cell.style.backgroundColor = "red";
+                }
+
+                // Heal people
+                ran = Math.random();
+                if ((cell.style.backgroundColor == "red") && (ran < health)) {
+                    cell.style.backgroundColor = "white";
                 }
             }
-        }, 500);
+        }, 1);
 
         $("#reset").click(function() {
             clearInterval(cycle);
