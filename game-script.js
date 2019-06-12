@@ -11,62 +11,64 @@ $(document).ready(function() {
     let generation;
     let generationOut = document.getElementById("generation");
     let slider = document.getElementById("range");
-    console.log(generationOut);
+    let running = false;
 
     let i;
     let j;
 
     $("#begin").click(function() {
-        console.log("button clicked");
-        percentage = parseInt(slider.value);
-        clearInterval();
-        clearGrid();
-        for (i = 1; i <= percentage; i++) {
-            ran = getRandomInt();
-            cell = document.getElementById(ran);
-            while (cell.style.backgroundColor == "green") {
+        if (!running) {
+            running = true;
+            console.log("button clicked");
+            percentage = parseInt(slider.value);
+            clearInterval();
+            clearGrid();
+            for (i = 1; i <= percentage; i++) {
                 ran = getRandomInt();
                 cell = document.getElementById(ran);
-            }
-            cell.style.backgroundColor = "green";
-        }
-
-        // For each generation
-        let cycle = setInterval(function() {
-            for (i = 1; i <= 100; i++) {
-
-                // Determine number of sick
-                percentageSick = 0;
-                for (j = 1; j <= 100; j++) {
-                    cell = document.getElementById(j);
-                    if (cell.style.backgroundColor == "red") {percentageSick++;}
+                while (cell.style.backgroundColor == "green") {
+                    ran = getRandomInt();
+                    cell = document.getElementById(ran);
                 }
-                console.log("precenteasgf" + percentageSick);
-                cell = document.getElementById(i);
-
-                // Get people sick
-                ran = Math.random();
-                if (percentageSick == 0) {thresh = spread;}
-                else {thresh = spread * percentage * spreadPercentageCoeff * percentageSick * spreadPercentageSickCoeff;}
-
-                console.log(thresh);
-                if ((cell.style.backgroundColor == "white") && (ran < thresh)) {
-                    console.log("s");
-                    cell.style.backgroundColor = "red";
-                }
-
-                // Heal people
-                ran = Math.random();
-                if ((cell.style.backgroundColor == "red") && (ran < health)) {
-                    cell.style.backgroundColor = "white";
-                }
+                cell.style.backgroundColor = "green";
             }
 
-            generation++;
-            generationOut.innerHTML = generation;
-        }, 50);
+            // For each generation
+            let cycle = setInterval(function() {
+                for (i = 1; i <= 100; i++) {
 
+                    // Determine number of sick
+                    percentageSick = 0;
+                    for (j = 1; j <= 100; j++) {
+                        cell = document.getElementById(j);
+                        if (cell.style.backgroundColor == "red") {percentageSick++;}
+                    }
+                    cell = document.getElementById(i);
+
+                    // Get people sick
+                    ran = Math.random();
+                    if (percentageSick == 0) {thresh = spread;}
+                    else {thresh = spread * percentage * spreadPercentageCoeff * percentageSick * spreadPercentageSickCoeff;}
+
+                    console.log(thresh);
+                    if ((cell.style.backgroundColor == "white") && (ran < thresh)) {
+                        console.log("s");
+                        cell.style.backgroundColor = "red";
+                    }
+
+                    // Heal people
+                    ran = Math.random();
+                    if ((cell.style.backgroundColor == "red") && (ran < health)) {
+                        cell.style.backgroundColor = "white";
+                    }
+                }
+
+                generation++;
+                generationOut.innerHTML = generation;
+            }, 50);
+        }   
         $("#reset").click(function() {
+            running = false;
             clearInterval(cycle);
             clearGrid();
         });
