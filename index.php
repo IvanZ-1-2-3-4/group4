@@ -18,7 +18,7 @@
 <input style="width: 400px;" type="range" min="0" max="100" value="0" id="range"></br>
 
 Percentage of population vaccinated:&nbsp<span id="value">0</span></br>
-Number of generations: 12
+Number of generations: <span id="generation">0</span>
 </br>
 <a href="new.php">new</a>
 <a href="old.php">old</a>
